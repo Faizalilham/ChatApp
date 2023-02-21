@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">OpenAI</string>
+    <string name="image_splash">SplashImage</string>
+    <string name="placeholder">Ketikkan Sesuatu ...</string>
+    <string name="leadingIconTextField">Icon</string>
+    <string name="trailingIconTextField">Clear</string>
+</resources>

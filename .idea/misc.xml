@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/compose-model-1676474085647.xml" value="0.21" />
+        <entry key="../../../../layout/compose-model-1676488783346.xml" value="0.5" />
+        <entry key="../../../../layout/compose-model-1676492940164.xml" value="0.22" />
+        <entry key="../../../../layout/compose-model-1676493460687.xml" value="0.3416666666666667" />
+        <entry key="../../../../layout/compose-model-1676536633802.xml" value="0.16089527027027026" />
+        <entry key="../../../../layout/compose-model-1676537316050.xml" value="0.22962962962962963" />
+        <entry key="../../../../layout/compose-model-1676537585559.xml" value="0.16089527027027026" />
+        <entry key="../../../../layout/compose-model-1676539015369.xml" value="0.5" />
+        <entry key="../../../../layout/compose-model-1676539938892.xml" value="0.25" />
+        <entry key="../../../../layout/compose-model-1676552490029.xml" value="0.21" />
+        <entry key="../../../../layout/compose-model-1676560154715.xml" value="0.3416666666666667" />
+        <entry key="../../../../layout/compose-model-1676561320659.xml" value="0.5" />
+        <entry key="../../../../layout/compose-model-1676576275991.xml" value="0.1" />
+        <entry key="../../../../layout/compose-model-1676577446725.xml" value="1.0" />
+        <entry key="../../../../layout/compose-model-1676731687672.xml" value="0.22962962962962963" />
+        <entry key="../../../../layout/compose-model-1676734196953.xml" value="0.14" />
+        <entry key="../../../../layout/compose-model-1676903361568.xml" value="0.16089527027027026" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

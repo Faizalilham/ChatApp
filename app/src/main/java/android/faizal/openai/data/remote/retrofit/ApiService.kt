@@ -11,7 +11,7 @@ interface ApiService {
     @POST("completions")
     @Headers(
         "Content-Type: application/json",
-        "Authorization: Bearer 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"
+        "Authorization: Bearer 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"
     )
     suspend fun getResponseAI(
         @Body body : AiBody

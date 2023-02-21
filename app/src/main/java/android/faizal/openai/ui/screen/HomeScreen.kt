@@ -2,8 +2,8 @@ package android.faizal.openai.ui.screen
 
 import android.faizal.openai.R
 import android.faizal.openai.di.ChatInjection
-import android.faizal.openai.model.Chat
-import android.faizal.openai.model.User
+import android.faizal.openai.domain.model.Chat
+import android.faizal.openai.domain.model.User
 import android.faizal.openai.ui.common.UiState
 import android.faizal.openai.ui.components.ButtonSend
 import android.faizal.openai.ui.components.ChatItem
@@ -11,9 +11,7 @@ import android.faizal.openai.ui.components.CustomTextField
 import android.faizal.openai.ui.theme.OpenAITheme
 import android.faizal.openai.view_model.HomeViewModel
 import android.faizal.openai.view_model.ViewModelFactory
-import android.widget.Toast
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
@@ -22,9 +20,7 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
@@ -34,7 +30,7 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun HomeScreen(
-    viewModel : HomeViewModel = viewModel(factory = ViewModelFactory(ChatInjection.provideChatRepository()))
+    viewModel : HomeViewModel = viewModel(factory = ViewModelFactory.getInstance())
 ) {
 
     var inputText by remember { mutableStateOf("")}
@@ -54,8 +50,10 @@ fun HomeScreen(
                     addChat = { id,text,user ->
                         viewModel.addChat(id,text,user)
                         inputText = ""
-                        scope.launch {
-                            lazyState.animateScrollToItem(uiState.data.size -1)
+                        if (uiState.data.size > 1){
+                            scope.launch {
+                                lazyState.animateScrollToItem(uiState.data.size -1)
+                            }
                         }
                     },
                     inputText = inputText,

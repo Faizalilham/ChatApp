@@ -1,12 +1,11 @@
 package android.faizal.openai.repository
 
 import android.faizal.openai.data.remote.response.AiBody
-import android.faizal.openai.data.remote.response.AiResponse
 import android.faizal.openai.data.remote.retrofit.ApiService
-import android.faizal.openai.model.Chat
-import android.faizal.openai.model.User
+import android.faizal.openai.domain.model.Chat
+import android.faizal.openai.domain.model.User
+import android.faizal.openai.domain.repository.IChatRepository
 import androidx.compose.runtime.mutableStateListOf
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
@@ -15,12 +14,12 @@ import kotlinx.coroutines.withContext
 
 class ChatRepository(
    private val  api : ApiService
-) {
+):IChatRepository {
 
     private val listChat : MutableList<Chat> = mutableStateListOf()
 
 
-    suspend fun addList(id : Int,text : String,user : User){
+    override suspend fun addList(id : Int,text : String,user : User){
         try{
             listChat.add(Chat(id,text,user))
             delay(1000L)
@@ -33,12 +32,13 @@ class ChatRepository(
                 }
             }
         }catch(e : Exception){
+            listChat.removeAt(listChat.size - 1)
             listChat.add(Chat(1,"Timeout, sorry",User.Bot))
         }
     }
 
 
-    fun getAllChat(): Flow<MutableList<Chat>>{
+    override fun getAllChat(): Flow<MutableList<Chat>>{
         return flowOf(listChat)
     }
 

@@ -1,4 +1,4 @@
-package android.faizal.openai.model
+package android.faizal.openai.domain.model
 
 data class Chat(
     val id : Int,
